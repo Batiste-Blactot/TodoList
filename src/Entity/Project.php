@@ -47,6 +47,7 @@ class Project
 
     /**
      * @ORM\OneToMany(targetEntity=Task::class, mappedBy="project", orphanRemoval=true, cascade={"persist"})
+     * @ORM\OrderBy({"deadline" = "ASC"})
      */
     private $Task;
 

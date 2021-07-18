@@ -28,6 +28,7 @@ class FrontController extends AbstractController
         $projectRepository = $this->getDoctrine()->getRepository(Project::class);
         $projects = $projectRepository->findBy(
             ['user' => $this->getUser()],
+            ['deadline' => 'ASC'],
         );
 
         return $this->render('front/index.html.twig', [
