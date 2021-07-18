@@ -46,7 +46,7 @@ class Project
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity=Task::class, mappedBy="project", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Task::class, mappedBy="project", orphanRemoval=true, cascade={"persist"})
      */
     private $Task;
 

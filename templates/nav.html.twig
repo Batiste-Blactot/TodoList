@@ -7,6 +7,12 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_index') }}">Voir les projets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_newProject') }}">Créer un nouveau Projet</a>
+          </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
             </li>

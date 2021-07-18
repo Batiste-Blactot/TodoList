@@ -43,7 +43,7 @@ class Task
     private $active;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Project::class, inversedBy="Task")
+     * @ORM\ManyToOne(targetEntity=Project::class, inversedBy="Task", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $project;
