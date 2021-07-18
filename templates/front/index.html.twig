@@ -3,15 +3,32 @@
 {% block title %}Hello FrontController!{% endblock %}
 
 {% block body %}
-<h1>Vos Projets</h1>
+<h1 class="text-center">Vos Projets</h1>
 
+<div class="container-fluid">
+    <div class="row">
 {% for project in projects %}
-<p>{{project.description}}</p>
-<p>{{project.openingDate | date('d/m/Y')}}</p>
-<p>{{project.deadline | date('d/m/Y')}}</p>
-<p>{{project.active?"Terminé":"En cours" }}</p>
-<a href="{{ path('showProject', {id: project.id}) }}" class="btn btn-primary">Voir le projet</a>
-<a href="{{ path('app_deleteProject', {id: project.id}) }}" class="btn btn-danger">Supprimer le projet</a>
-<a href="{{path('app_updateProject', {id: project.id}) }}" class="btn btn-success">Mettre à jour le projet</a>
-{% endfor %}
-{% endblock %}
+<div class="card my-5 col-3 mx-auto" style="width: 18rem;">
+    <div class="card-header bg-dark text-white">
+        <h3 class="text-center">{{project.description}}</h3>
+    </div>
+    <div class="card-body text-center">
+        <p>Date de création : {{project.openingDate | date('d/m/Y')}}</p>
+        <p>Date deadline : {{project.deadline | date('d/m/Y')}}</p>
+        <p>Statut : {{project.active?"Terminé":"En cours" }}</p>
+    </div>
+    <div class="card-footer text-center">
+        <a href="{{ path('showProject', {id: project.id}) }}" class="btn btn-primary my-2">Voir le projet</a>
+        <a href="{{ path('app_deleteProject', {id: project.id}) }}" class="btn btn-danger my-2">Supprimer le projet</a>
+        <a href="{{path('app_updateProject', {id: project.id}) }}" class="btn btn-success my-2">Mettre à jour le projet</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+  
+  {% endblock %}
+
+
+
+
