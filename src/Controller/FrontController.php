@@ -20,6 +20,8 @@ use Symfony\Component\HttpFoundation\Request;
  * @isGranted("IS_AUTHENTICATED_FULLY")
  */
 class FrontController extends AbstractController
+
+/* Afficher les projets */
 {
     #[Route('/index', name: 'app_index')]
     public function index(): Response
